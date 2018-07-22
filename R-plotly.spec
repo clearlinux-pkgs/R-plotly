@@ -4,22 +4,12 @@
 #
 Name     : R-plotly
 Version  : 4.7.1
-Release  : 11
+Release  : 12
 URL      : https://cran.r-project.org/src/contrib/plotly_4.7.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/plotly_4.7.1.tar.gz
 Summary  : Create Interactive Web Graphics via 'plotly.js'
 Group    : Development/Tools
 License  : MIT
-Requires: R-base64enc
-Requires: R-crosstalk
-Requires: R-data.table
-Requires: R-dplyr
-Requires: R-ggplot2
-Requires: R-hexbin
-Requires: R-htmlwidgets
-Requires: R-httr
-Requires: R-purrr
-Requires: R-tidyr
 BuildRequires : R-base64enc
 BuildRequires : R-crosstalk
 BuildRequires : R-data.table
@@ -43,11 +33,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532270471
+export SOURCE_DATE_EPOCH=1532294255
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1532270471
+export SOURCE_DATE_EPOCH=1532294255
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
