@@ -4,23 +4,16 @@
 #
 Name     : R-plotly
 Version  : 4.8.0
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/plotly_4.8.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/plotly_4.8.0.tar.gz
 Summary  : Create Interactive Web Graphics via 'plotly.js'
 Group    : Development/Tools
 License  : MIT
-Requires: R-base64enc
-Requires: R-crosstalk
-Requires: R-data.table
-Requires: R-dplyr
-Requires: R-ggplot2
-Requires: R-hexbin
-Requires: R-htmlwidgets
-Requires: R-httr
-Requires: R-listviewer
-Requires: R-promises
-Requires: R-tidyr
+Requires: R-RColorBrewer
+Requires: R-assertthat
+BuildRequires : R-RColorBrewer
+BuildRequires : R-assertthat
 BuildRequires : R-base64enc
 BuildRequires : R-crosstalk
 BuildRequires : R-data.table
@@ -32,7 +25,7 @@ BuildRequires : R-httr
 BuildRequires : R-listviewer
 BuildRequires : R-promises
 BuildRequires : R-tidyr
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 <img src="man/figures/plotly.png" width="200" />
@@ -52,11 +45,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532697063
+export SOURCE_DATE_EPOCH=1538581706
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1532697063
+export SOURCE_DATE_EPOCH=1538581706
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
