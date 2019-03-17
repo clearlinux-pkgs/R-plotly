@@ -4,14 +4,19 @@
 #
 Name     : R-plotly
 Version  : 4.8.0
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/plotly_4.8.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/plotly_4.8.0.tar.gz
 Summary  : Create Interactive Web Graphics via 'plotly.js'
 Group    : Development/Tools
 License  : MIT
-Requires: R-RColorBrewer
-Requires: R-assertthat
+Requires: R-gtable
+Requires: R-jsonlite
+Requires: R-lazyeval
+Requires: R-munsell
+Requires: R-plyr
+Requires: R-scales
+Requires: R-viridisLite
 BuildRequires : R-RColorBrewer
 BuildRequires : R-assertthat
 BuildRequires : R-base64enc
@@ -19,12 +24,19 @@ BuildRequires : R-crosstalk
 BuildRequires : R-data.table
 BuildRequires : R-dplyr
 BuildRequires : R-ggplot2
+BuildRequires : R-gtable
 BuildRequires : R-hexbin
 BuildRequires : R-htmlwidgets
 BuildRequires : R-httr
+BuildRequires : R-jsonlite
+BuildRequires : R-lazyeval
 BuildRequires : R-listviewer
+BuildRequires : R-munsell
+BuildRequires : R-plyr
 BuildRequires : R-promises
+BuildRequires : R-scales
 BuildRequires : R-tidyr
+BuildRequires : R-viridisLite
 BuildRequires : buildreq-R
 
 %description
@@ -45,11 +57,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1538581706
+export SOURCE_DATE_EPOCH=1552864608
 
 %install
+export SOURCE_DATE_EPOCH=1552864608
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1538581706
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -84,8 +96,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library plotly|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  plotly || :
 
 
 %files
@@ -273,3 +284,79 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/plotly/htmlwidgets/plotly.yaml
 /usr/lib64/R/library/plotly/plotlyjs.R
 /usr/lib64/R/library/plotly/stars.R
+/usr/lib64/R/library/plotly/tests/testthat.R
+/usr/lib64/R/library/plotly/tests/testthat/test-animate-highlight.R
+/usr/lib64/R/library/plotly/tests/testthat/test-api.R
+/usr/lib64/R/library/plotly/tests/testthat/test-cookbook-axes.R
+/usr/lib64/R/library/plotly/tests/testthat/test-cookbook-lines.R
+/usr/lib64/R/library/plotly/tests/testthat/test-cookbook-scatterplots.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-abline.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-annotation_.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-area.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-bar.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-blank.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-boxplot.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-col.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-contour.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-coord-fixed.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-crossbar.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-date.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-density.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-density2d.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-device.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-dynamicTicks.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-errorbar-horizontal.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-errorbar.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-facets.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-ggplotly.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-heatmap.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-hex.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-histogram.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-hline.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-jitter.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-labels.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-legend.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-lines.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-map.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-path.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-point.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-polygons.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-quantile.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-rect.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-resize.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-ribbon.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-rug.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-segment.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-sf.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-size.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-smooth.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-spoke.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-step.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-text.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-theme.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-ticks.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-tooltip.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-violin.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-vline.R
+/usr/lib64/R/library/plotly/tests/testthat/test-ggplot-ylim.R
+/usr/lib64/R/library/plotly/tests/testthat/test-group2NA.R
+/usr/lib64/R/library/plotly/tests/testthat/test-mean-error-bars.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-color.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-colorbar.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-data.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-filename.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-getfigure.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-group.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-internals.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-linetype.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-name.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-partial-bundles.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-pie.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-sf.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-size.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-splom.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-subplot.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly-symbol.R
+/usr/lib64/R/library/plotly/tests/testthat/test-plotly.R
+/usr/lib64/R/library/plotly/tests/testthat/test-rotated-ticks.R
+/usr/lib64/R/library/plotly/tests/testthat/test-toRGB.R

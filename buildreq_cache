@@ -6,9 +6,16 @@ R-crosstalk
 R-data.table
 R-dplyr
 R-ggplot2
+R-gtable
 R-hexbin
 R-htmlwidgets
 R-httr
+R-jsonlite
+R-lazyeval
 R-listviewer
+R-munsell
+R-plyr
 R-promises
+R-scales
 R-tidyr
+R-viridisLite
