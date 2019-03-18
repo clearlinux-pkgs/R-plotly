@@ -4,19 +4,12 @@
 #
 Name     : R-plotly
 Version  : 4.8.0
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/plotly_4.8.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/plotly_4.8.0.tar.gz
 Summary  : Create Interactive Web Graphics via 'plotly.js'
 Group    : Development/Tools
 License  : MIT
-Requires: R-gtable
-Requires: R-jsonlite
-Requires: R-lazyeval
-Requires: R-munsell
-Requires: R-plyr
-Requires: R-scales
-Requires: R-viridisLite
 BuildRequires : R-RColorBrewer
 BuildRequires : R-assertthat
 BuildRequires : R-base64enc
@@ -57,10 +50,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552864608
+export SOURCE_DATE_EPOCH=1552874901
 
 %install
-export SOURCE_DATE_EPOCH=1552864608
+export SOURCE_DATE_EPOCH=1552874901
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
