@@ -4,7 +4,7 @@
 #
 Name     : R-plotly
 Version  : 4.8.0
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/plotly_4.8.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/plotly_4.8.0.tar.gz
 Summary  : Create Interactive Web Graphics via 'plotly.js'
