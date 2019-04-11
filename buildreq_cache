@@ -1,4 +1,4 @@
-4.8.0
+4.9.0
 R-RColorBrewer
 R-assertthat
 R-base64enc
@@ -16,6 +16,7 @@ R-listviewer
 R-munsell
 R-plyr
 R-promises
+R-purrr
 R-scales
 R-tidyr
 R-viridisLite
