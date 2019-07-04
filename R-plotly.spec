@@ -4,7 +4,7 @@
 #
 Name     : R-plotly
 Version  : 4.9.0
-Release  : 23
+Release  : 24
 URL      : https://cran.r-project.org/src/contrib/plotly_4.9.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/plotly_4.9.0.tar.gz
 Summary  : Create Interactive Web Graphics via 'plotly.js'
@@ -14,30 +14,48 @@ Requires: R-RColorBrewer
 Requires: R-base64enc
 Requires: R-crosstalk
 Requires: R-data.table
+Requires: R-digest
 Requires: R-dplyr
 Requires: R-ggplot2
 Requires: R-hexbin
+Requires: R-htmltools
 Requires: R-htmlwidgets
 Requires: R-httr
 Requires: R-jsonlite
+Requires: R-lazyeval
 Requires: R-listviewer
+Requires: R-magrittr
+Requires: R-munsell
 Requires: R-promises
 Requires: R-purrr
+Requires: R-rlang
+Requires: R-scales
+Requires: R-tibble
 Requires: R-tidyr
+Requires: R-viridisLite
 BuildRequires : R-RColorBrewer
 BuildRequires : R-base64enc
 BuildRequires : R-crosstalk
 BuildRequires : R-data.table
+BuildRequires : R-digest
 BuildRequires : R-dplyr
 BuildRequires : R-ggplot2
 BuildRequires : R-hexbin
+BuildRequires : R-htmltools
 BuildRequires : R-htmlwidgets
 BuildRequires : R-httr
 BuildRequires : R-jsonlite
+BuildRequires : R-lazyeval
 BuildRequires : R-listviewer
+BuildRequires : R-magrittr
+BuildRequires : R-munsell
 BuildRequires : R-promises
 BuildRequires : R-purrr
+BuildRequires : R-rlang
+BuildRequires : R-scales
+BuildRequires : R-tibble
 BuildRequires : R-tidyr
+BuildRequires : R-viridisLite
 BuildRequires : buildreq-R
 
 %description
@@ -57,13 +75,13 @@ Downloads](http://cranlogs.r-pkg.org/badges/grand-total/plotly)](https://www.rpa
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1554950193
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562206850
 
 %install
-export SOURCE_DATE_EPOCH=1554950193
+export SOURCE_DATE_EPOCH=1562206850
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -92,7 +110,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
