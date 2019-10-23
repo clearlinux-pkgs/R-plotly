@@ -4,7 +4,7 @@
 #
 Name     : R-plotly
 Version  : 4.9.0
-Release  : 26
+Release  : 27
 URL      : https://cran.r-project.org/src/contrib/plotly_4.9.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/plotly_4.9.0.tar.gz
 Summary  : Create Interactive Web Graphics via 'plotly.js'
@@ -23,9 +23,7 @@ Requires: R-htmlwidgets
 Requires: R-httr
 Requires: R-jsonlite
 Requires: R-lazyeval
-Requires: R-listviewer
 Requires: R-magrittr
-Requires: R-munsell
 Requires: R-promises
 Requires: R-purrr
 Requires: R-rlang
@@ -57,6 +55,7 @@ BuildRequires : R-tibble
 BuildRequires : R-tidyr
 BuildRequires : R-viridisLite
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 <img src="man/figures/plotly.png" width="200" />
@@ -76,10 +75,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562206850
+export SOURCE_DATE_EPOCH=1571875074
 
 %install
-export SOURCE_DATE_EPOCH=1562206850
+export SOURCE_DATE_EPOCH=1571875074
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
