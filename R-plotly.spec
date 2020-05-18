@@ -4,7 +4,7 @@
 #
 Name     : R-plotly
 Version  : 4.9.2.1
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/plotly_4.9.2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/plotly_4.9.2.1.tar.gz
 Summary  : Create Interactive Web Graphics via 'plotly.js'
@@ -23,7 +23,6 @@ Requires: R-htmlwidgets
 Requires: R-httr
 Requires: R-jsonlite
 Requires: R-lazyeval
-Requires: R-listviewer
 Requires: R-magrittr
 Requires: R-promises
 Requires: R-purrr
@@ -45,7 +44,6 @@ BuildRequires : R-htmlwidgets
 BuildRequires : R-httr
 BuildRequires : R-jsonlite
 BuildRequires : R-lazyeval
-BuildRequires : R-listviewer
 BuildRequires : R-magrittr
 BuildRequires : R-promises
 BuildRequires : R-purrr
@@ -68,21 +66,22 @@ Downloads](https://cranlogs.r-pkg.org/badges/grand-total/plotly)](https://www.rp
 
 %prep
 %setup -q -c -n plotly
+cd %{_builddir}/plotly
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1586277270
+export SOURCE_DATE_EPOCH=1589776173
 
 %install
-export SOURCE_DATE_EPOCH=1586277270
+export SOURCE_DATE_EPOCH=1589776173
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
